@@ -1,0 +1,516 @@
+
+/*botoes*/
+.round-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #C0C0C0;
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 2%;
+    z-index: 2;
+    margin-bottom: 10px;
+  }
+  
+  .round-button:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 65px;
+    height: 65px;
+  }
+  
+  .round-button:active {
+    background-color: rgb(119, 144, 253);
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  }
+
+/*botoes popups*/
+.btn-pop {
+    border-radius: 15px;
+    background-color: rgb(119, 144, 253);
+    border: 2px solid #C0C0C0;
+    color: white;
+    font-size: medium;
+    transition: all 0.3s ease;
+    z-index: 2;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+  
+  .btn-pop:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 15px;
+  }
+  
+  .btn-pop:active {
+    background-color: #bdbdbd;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  }
+
+/* btn deletar config */
+.custom-red{
+    background-color: rgb(255, 102, 102);
+}
+
+/* btn enviar chat */
+.custom-enviar{
+    margin-top: 1%;
+    height: 45px;
+    border-radius: 20px;
+}
+
+body, html {
+    height: 100%;
+}
+
+div.wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#mapContainer {
+    width: 100vw;
+    height: 100vh;
+};
+
+
+/*pesquisa*/
+#search-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+}
+
+.search-form {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+    width: 60%;
+    position: relative;
+    height: 40px;
+    border: 1px solid #999;
+    border-radius: 30px;
+    background-color: #fff;
+    overflow: hidden;
+    z-index: 2;
+
+}
+
+/* input chat */
+.input-chat{
+    margin-left: 0%;
+    padding-left: 20px;
+    width: 90%;
+}
+
+.search-text {
+    font-size: 14px;
+    color: #ddd;
+    border-width: 0;
+    background: transparent;
+}
+
+#search-box input[type="text"] {
+    padding: 11px 0px 12px 1em;
+    color: #333;
+    outline: none;
+    width: 90%;
+}
+
+/*btn pesquisa*/
+#search-button {
+    position: absolute;
+    right: 10px;
+    height: 42px;
+    color: #fff;
+    text-align: center;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-width: 0;
+}
+
+.rolagem {
+    width: 300px; 
+    height: 350px; 
+    overflow: auto;
+}
+
+/* Personalização para o Google Chrome */
+.rolagem::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .rolagem::-webkit-scrollbar-thumb {
+    background-color: #C0C0C0;
+  }
+  
+  .rolagem::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+  }
+
+/*popup alterar*/
+.popup-wrapper-alterar {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.popup-alterar {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-alterar a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-alterar {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup deletar*/
+.popup-wrapper-deletar {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.popup-deletar {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-deletar a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-deletar {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup grupo*/
+.popup-wrapper-group {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.popup-group {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-group a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-group {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup local*/
+.popup-wrapper-loc {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.popup-loc {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-loc a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-loc {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup trajeto*/
+.popup-wrapper-trajeto {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.popup-trajeto {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-trajeto a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-trajeto {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup config*/
+.popup-wrapper-conf {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.popup-conf {
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 20px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-conf a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-conf {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/*popup chat*/
+.popup-wrapper-chat {
+    display: none;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+}
+
+.popup-chat {
+    font-family: sans-serif;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+    border-radius: 20px;
+    max-width: 300px;
+    max-height: 550px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.popup-chat a {
+    color: white;
+    cursor: ponter;
+    padding: 8px 60px;
+    text-decoration: none;
+    background: #3498db;
+    border-radius: 20px;
+
+}
+
+.popup-close-chat {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+
+/*chat*/
+#chat-container {
+    width: 100px;
+    margin: 0 auto;
+  }
+  
+  #message-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #message-list li {
+    margin-bottom: 10px;
+  }
+  
+  #input-container {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  #message-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  #send-button {
+    padding: 5px 10px;
+  }
